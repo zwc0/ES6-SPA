@@ -1,7 +1,8 @@
 var content=e=>{
   e=e||'home';
-  let main=document.getElementsByTagName('main')[0],
-  tmp=e=='test/test'?1
+  let main=document.getElementsByTagName('main')[0];
+  main.classList.add('loading');
+  let tmp=e=='test/test'?1
   :0;
   if(tmp){
     import(`/${e}.c`)
@@ -20,6 +21,7 @@ var content=e=>{
     document.title=`title - ${location.hash.slice(1).split('/').slice(-1)[0]}`;
   };
   document.body.scrollIntoView();
+  main.classList.remove('loading');
 };
 window.onhashchange=()=>content(location.hash.slice(1));
 content(location.hash.slice(1));
