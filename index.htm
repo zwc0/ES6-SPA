@@ -5,7 +5,21 @@
 <script type="module">
 import '/res/hash.js';
 </script>
+<style>
+#page{
+  display:grid;
+}
+nav{grid-area:nav}
+header{grid-area:header}
+main{grid-area:main;}
+footer{grid-area:footer;}
+.loading:before{
+  content:"Loading...";
+}
+</style>
+<div id="page">
 <header></header>
 <nav></nav>
 <main></main>
 <footer></footer>
+</div>
